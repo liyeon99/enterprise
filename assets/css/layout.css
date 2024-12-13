@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+@import './reset.css';
+@import './common.css';
+
+#wrap{
+  min-width: 1440px;
+}
+#main{
+	position: relative;
+}
+/* header */
+#header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 138px;
+	z-index: 100;
+	padding: 0 100px;
+	transform: translateY(-100%);
+	/* opacity: 0; */
+	transition: transform .3s;
+	color: #fff;
+}
+#header.dark{
+	color: #000;
+}
+#header.dark .logo{
+	color: #000;
+	filter: brightness(0) invert(0);
+}
+
+#header.dark .gnb .icon,
+#header.dark .gnb .chevron{
+	filter: brightness(0) invert(0);
+	transition: .3s;
+}
+
+#header.on{
+	transform:translate(0);
+	 /* opacity:1; */
+}
+#header .logo{
+	width: 100px;
+	filter: brightness(0) invert(1);
+}
+
+#header .gnb .gnb-list{
+	display: flex;
+	align-items: center;
+	gap: 50px;
+	font-weight: 600;
+	font-size: 18px;
+}
+#header .gnb .gnb-item{
+	transition: color .5s;
+	position: relative;
+}
+
+#header .gnb .btn-lang{
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+#header .gnb .icon{
+	width: 24px;
+	height: 24px;
+}
+#header .gnb .chevron{
+	width: 10px;
+	height: 10px;
+}
+#header .gnb .lang-list{
+	position: absolute;
+	top: 33px;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	text-align: center;
+	background-color: #000;
+	border: 1px solid #5a5a5a;
+	border-radius: 6px;
+	transition: all .3s;
+	padding: 5px 0;
+}
+#header .gnb .lang-list.on{
+	opacity: 1;
+	visibility: visible;
+}
+#header .gnb .lang-list .lang-item.on a{
+	opacity: 1;
+}
+#header .gnb .lang-list .lang-item a{
+	padding: 2px 14px 4px 13px;
+	color: #fff;
+	opacity: 0.5;
+}
+
+/* footer */
+#footer{
+	display: flex;
+	justify-content: space-between;
+	padding: 60px 100px;
+	background: #000;
+	color: #fff;
+	font-size: 14px;
+	position: relative;
+	z-index: 2;
+}
+.group-logo{
+	width: 193px;
+	height: 42px;
+}
+
+#footer .group-addr .copy{
+	text-transform: uppercase;
+}
